@@ -1,0 +1,36 @@
+.row {
+  border-width: 1px 1px 0 1px;
+  border-color: #333;
+  border-style: solid;
+  padding: 0.5rem;
+  cursor: move;
+}
+
+.row:last-of-type {
+  border-width: 1px;
+}
+
+.col-story-type {
+  min-width: 5rem;
+  display: inline-block;
+}
+
+.col-story-name {
+
+}
+
+.accepted {
+  background: #DAEBCF;
+}
+
+.started {
+  background: #F3F3D1;
+}
+
+.unstarted {
+  background: #F4F4F4;
+}
+
+.unschedueled {
+  background: #E4EFF7;
+}
