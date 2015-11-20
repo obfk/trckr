@@ -5,12 +5,26 @@ import webpack from 'webpack';
 import webpackMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import config from './webpack.config.js';
+import httpProxy from 'http-proxy';
 
 const isDeveloping = process.env.NODE_ENV !== 'production';
 const port = isDeveloping ? 3000 : process.env.PORT;
 const app = express();
+const proxy = httpProxy.createProxyServer({
+  changeOrigin: true
+});
 
 app.use(express.static(__dirname + '/dist'));
+
+proxy.on('proxyReq', function(proxyReq, req, res, options) {
+  proxyReq.setHeader('X-TrackerToken', process.env.TRACKER_TOKEN);
+});
+
+app.all('/*', (req, res) => {
+  proxy.web(req, res, {
+    target: 'https://www.pivotaltracker.com/services/v5'
+  });
+});
 
 if (isDeveloping) {
   const compiler = webpack(config);

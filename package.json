@@ -23,6 +23,7 @@
     "jscs": "jscs ."
   },
   "dependencies": {
+    "http-proxy": "^1.12.0",
     "react": "0.14.3",
     "react-dom": "0.14.3"
   },
