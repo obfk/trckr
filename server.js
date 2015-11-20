@@ -20,9 +20,9 @@ proxy.on('proxyReq', function(proxyReq, req, res, options) {
   proxyReq.setHeader('X-TrackerToken', process.env.TRACKER_TOKEN);
 });
 
-app.all('/*', (req, res) => {
+app.all('/v5/*', (req, res) => {
   proxy.web(req, res, {
-    target: 'https://www.pivotaltracker.com/services/v5'
+    target: 'https://www.pivotaltracker.com/services'
   });
 });
 
