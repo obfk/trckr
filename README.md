@@ -6,9 +6,17 @@ Alternative, minimal version of PivotalTracker.
 
 * node
 * webpack
+* express
+* bable
 * redux
 * react
 * rambda
+
+## Goals
+
+1. performant
+2. minimalistic
+3. fun to use
 
 ## References
 
