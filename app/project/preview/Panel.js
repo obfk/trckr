@@ -7,18 +7,20 @@ import styles from './Panel.css';
 const Panel = React.createClass ({
   render: function() {
     return (
-      <div className={styles[this.props.panelState]}>
+      <div>
 
         <h4 className={styles.section_heading}>{this.props.panelState}</h4>
 
-        {
-          this.props.stories.map(story => {
-            return <Story key={story.id} story={story} />
-          })
-        }
+        <div>
+          {
+            this.props.stories.map(story => {
+              return <Story key={story.id} story={story} />
+            })
+          }
+        </div>
       </div>
     );
-  }
+  },
 });
 
 export default Panel;

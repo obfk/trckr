@@ -24,36 +24,43 @@ const App = React.createClass ({
 
   render: function() {
     return (
-      <div className={styles.container} >
+      <div className={styles.container}>
+
         <Header />
 
         {this.state.accepted.length > 0 ?
-          <Panel stories={this.state.accepted} panelState={'accepted'} /> : null
-        }
-        {this.state.finished.length > 0 ?
-          <Panel stories={this.state.finished} panelState={'finished'} /> : null
+          <Panel stories={this.state.accepted} panelState={'accepted'}/>
+          : null
         }
         {this.state.delivered.length > 0 ?
-          <Panel stories={this.state.delivered} panelState={'delivered'} /> : null
+          <Panel stories={this.state.delivered} panelState={'delivered'}/>
+          : null
+        }
+        {this.state.finished.length > 0 ?
+          <Panel stories={this.state.finished} panelState={'finished'}/>
+          : null
         }
         {this.state.started.length > 0 ?
-          <Panel stories={this.state.started} panelState={'started'} /> : null
+          <Panel stories={this.state.started} panelState={'started'}/>
+          : null
         }
         {this.state.rejected.length > 0 ?
-          <Panel stories={this.state.rejected} panelState={'rejected'} /> : null
+          <Panel stories={this.state.rejected} panelState={'rejected'}/>
+          : null
         }
         {this.state.unstarted.length > 0 ?
-          <Panel stories={this.state.unstarted} panelState={'unstarted'} /> : null
+          <Panel stories={this.state.unstarted} panelState={'unstarted'}/>
+          : null
         }
         {this.state.unscheduled.length > 0 ?
-          <Panel stories={this.state.unscheduled} panelState={'unscheduled'} /> : null
+          <Panel stories={this.state.unscheduled} panelState={'unscheduled'}/>
+          : null
         }
 
       </div>
     );
   },
 
-  // TODO: DRY up
   setStoriesState_: function() {
     $.get('/v5/projects/1486124/stories?filter=state%3Aunstarted', function(result) {
       if (this.isMounted()) {

@@ -5,7 +5,7 @@ import styles from './Story.css';
 const Story = React.createClass({
   render: function() {
     return (
-      <div className={`${styles.row} ${styles[this.storyState_(this.props.story.current_state)]}`}>
+      <div className={`row ${styles.row} ${styles[this.storyState_(this.props.story.current_state)]}`}>
         <span className={`${styles['col-story-type']}`}>
           {this.props.story.story_type}
         </span>
@@ -19,14 +19,20 @@ const Story = React.createClass({
 
   storyState_: function(currentState) {
     switch (currentState) {
-      case 'unscheduled':
-        return 'unscheduled';
-      case 'unstarted':
-        return 'unstarted';
       case 'accepted':
         return 'accepted';
-      default:
+      case 'delivered':
+        return 'delivered';
+      case 'finished':
+        return 'finished';
+      case 'started':
         return 'started';
+      case 'rejected':
+        return 'rejected';
+      case 'unstarted':
+        return 'unstarted';
+      default:
+        return 'unscheduled';
     }
   }
 });

@@ -23,6 +23,19 @@
   background: #DAEBCF;
 }
 
+
+.delivered {
+  background: #a0bd66;
+}
+
+.finished {
+  background: #f6b266;
+}
+
+.rejected {
+  background: #ca7888;
+}
+
 .started {
   background: #F3F3D1;
 }
