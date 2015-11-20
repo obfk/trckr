@@ -5,10 +5,10 @@ Alternative, minimal version of PivotalTracker.
 ## Ideas
 
 * node
-* express
 * webpack
 * redux
 * react
+* rambda
 
 ## References
 
