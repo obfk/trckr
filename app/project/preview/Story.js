@@ -1,5 +1,7 @@
 import React from 'react';
 
+import styles from './Story.css';
+
 const Story = React.createClass({
   render: function() {
     return (
