@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Header from './project/header/Header.js';
-import Panel from './project/preview/Panel.js';
+import Header from './views/header/Header.js';
+import Panel from './views/preview/Panel.js';
 
 import styles from './App.css';
 
