@@ -26,7 +26,29 @@ const App = React.createClass ({
     return (
       <div className={styles.container} >
         <Header />
-        <Panel stories={this.state.unstarted} panelState={'unstarted'} />
+
+        {this.state.accepted.length > 0 ?
+          <Panel stories={this.state.accepted} panelState={'accepted'} /> : null
+        }
+        {this.state.finished.length > 0 ?
+          <Panel stories={this.state.finished} panelState={'finished'} /> : null
+        }
+        {this.state.delivered.length > 0 ?
+          <Panel stories={this.state.delivered} panelState={'delivered'} /> : null
+        }
+        {this.state.started.length > 0 ?
+          <Panel stories={this.state.started} panelState={'started'} /> : null
+        }
+        {this.state.rejected.length > 0 ?
+          <Panel stories={this.state.rejected} panelState={'rejected'} /> : null
+        }
+        {this.state.unstarted.length > 0 ?
+          <Panel stories={this.state.unstarted} panelState={'unstarted'} /> : null
+        }
+        {this.state.unscheduled.length > 0 ?
+          <Panel stories={this.state.unscheduled} panelState={'unscheduled'} /> : null
+        }
+
       </div>
     );
   },

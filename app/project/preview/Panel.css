@@ -1,4 +1,5 @@
 .section_heading {
+  text-transform: uppercase;
   font-weight: 200;
   padding: 0.5rem 0.5rem;
   margin: 0;

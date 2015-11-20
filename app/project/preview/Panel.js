@@ -7,9 +7,9 @@ import styles from './Panel.css';
 const Panel = React.createClass ({
   render: function() {
     return (
-      <div className={styles[this.props.panelType]}>
+      <div className={styles[this.props.panelState]}>
 
-        <h4>{this.props.panelType}</h4>
+        <h4 className={styles.section_heading}>{this.props.panelState}</h4>
 
         {
           this.props.stories.map(story => {

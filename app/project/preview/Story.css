@@ -3,7 +3,7 @@
   border-color: #333;
   border-style: solid;
   padding: 0.5rem;
-  cursor: move;
+  cursor: pointer;
 }
 
 .row:last-of-type {
