@@ -2,12 +2,15 @@ import React from 'react';
 
 import Story from './Story.js';
 
-import styles from './Stories.css';
+import styles from './Panel.css';
 
-const Stories = React.createClass ({
-    render: function() {
+const Panel = React.createClass ({
+  render: function() {
     return (
-      <div>
+      <div className={styles[this.props.panelType]}>
+
+        <h4>{this.props.panelType}</h4>
+
         {
           this.props.stories.map(story => {
             return <Story key={story.id} story={story} />
@@ -18,4 +21,4 @@ const Stories = React.createClass ({
   }
 });
 
-export default Stories;
+export default Panel;
